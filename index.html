@@ -424,7 +424,26 @@ input[type="month"]{
     }
 }
 
+input[type="date"],
+input[type="month"]{
+    height:38px;
+    line-height:38px;
+    padding-top:0;
+    padding-bottom:0;
+    box-sizing:border-box;
+}
 
+@media(max-width:650px){
+    input[type="date"],
+    input[type="month"]{
+        height:38px;
+        line-height:38px;
+        padding-top:0;
+        padding-bottom:0;
+        -webkit-appearance:none;
+        appearance:none;
+    }
+}
 
 @media(max-width:650px){
 
