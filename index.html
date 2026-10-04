@@ -263,7 +263,11 @@ input:disabled,select:disabled{background:#eee;color:#999;cursor:not-allowed}
 
 
 
-.income-list{display:flex;flex-direction:column;gap:8px}
+.income-list{
+display:flex;flex-direction:column;gap:8px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
 
 
 
@@ -379,7 +383,51 @@ input:disabled,select:disabled{background:#eee;color:#999;cursor:not-allowed}
 
 
 
+input,
+select{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    box-sizing:border-box;
+}
 
+.form-item,
+.period-control{
+    width:100%;
+    min-width:0;
+}
+
+input[type="date"],
+input[type="month"]{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    box-sizing:border-box;
+}
+
+@media(max-width:650px){
+    .form-grid,
+    .filter-grid,
+    .summary{
+        grid-template-columns:minmax(0,1fr);
+    }
+
+    .form-item,
+    .period-control{
+        width:100%;
+        min-width:0;
+        max-width:100%;
+    }
+
+    input[type="date"],
+    input[type="month"]{
+        display:block;
+        width:100%;
+        min-width:0;
+        max-width:100%;
+        box-sizing:border-box;
+    }
+}
 
 
 
@@ -666,7 +714,7 @@ input:disabled,select:disabled{background:#eee;color:#999;cursor:not-allowed}
 
 
 
-                    class="status-btn active complete"
+                    class="status-btn"
 
 
 
@@ -702,7 +750,7 @@ input:disabled,select:disabled{background:#eee;color:#999;cursor:not-allowed}
 
 
 
-                    class="status-btn"
+                    class="status-btn active pending"
 
 
 
@@ -1532,7 +1580,7 @@ let accountData = {
 
 };
 
-let incomeStatus = "입금완료";
+let incomeStatus = "미입금";
 
 
 
